@@ -1,0 +1,46 @@
+# Symfony directories
+/var/
+/vendor/
+/public/build/
+/public/uploads/
+
+# Composer files
+/composer.lock
+/composer.phar
+
+# Environment-specific files
+/.env
+/.env.local
+/.env.*.local
+
+# IDE and editor-specific files
+.idea/
+.vscode/
+*.swp
+*~
+
+# Logs and temporary files
+/logs/
+/tmp/
+
+# PHPUnit
+.phpunit.result.cache
+
+# Coverage reports
+/coverage/
+
+# Build artifacts
+/node_modules/
+/yarn-error.log
+/npm-debug.log
+/pnpm-debug.log
+
+# Symfony Encore
+/public/build/
+/public/hot
+
+# Doctrine generated files
+/doctrine
+
+# Deployment artifacts
+/.DS_Store
