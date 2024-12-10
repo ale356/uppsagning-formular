@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Summary</h1>
+
+<p>The following services will be canceled:</p>
+<ul>
+    {% for service in selectedServices %}
+        <li>{{ service }}</li>
+    {% endfor %}
+</ul>
+
+<form action="{{ path('cancel_service_confirm') }}" method="post">
+    <button type="submit">Cancel Services</button>
+</form>
+{% endblock %}

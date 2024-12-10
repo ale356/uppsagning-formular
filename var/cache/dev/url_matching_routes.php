@@ -15,6 +15,9 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/xdebug' => [[['_route' => '_profiler_xdebug', '_controller' => 'web_profiler.controller.profiler::xdebugAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
+        '/cancel-service' => [[['_route' => 'cancel_service', '_controller' => 'App\\Controller\\CancelServiceController::cancelService'], null, null, null, false, false, null]],
+        '/cancel-service/summary' => [[['_route' => 'cancel_service_summary', '_controller' => 'App\\Controller\\CancelServiceController::cancelServiceSummary'], null, null, null, false, false, null]],
+        '/cancel-service/confirm' => [[['_route' => 'cancel_service_confirm', '_controller' => 'App\\Controller\\CancelServiceController::confirmCancelService'], null, ['POST' => 0], null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

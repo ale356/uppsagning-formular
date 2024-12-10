@@ -18,4 +18,10 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
+    'cancel_service' => [[], ['_controller' => 'App\\Controller\\CancelServiceController::cancelService'], [], [['text', '/cancel-service']], [], [], []],
+    'cancel_service_summary' => [[], ['_controller' => 'App\\Controller\\CancelServiceController::cancelServiceSummary'], [], [['text', '/cancel-service/summary']], [], [], []],
+    'cancel_service_confirm' => [[], ['_controller' => 'App\\Controller\\CancelServiceController::confirmCancelService'], [], [['text', '/cancel-service/confirm']], [], [], []],
+    'App\Controller\CancelServiceController::cancelService' => [[], ['_controller' => 'App\\Controller\\CancelServiceController::cancelService'], [], [['text', '/cancel-service']], [], [], []],
+    'App\Controller\CancelServiceController::cancelServiceSummary' => [[], ['_controller' => 'App\\Controller\\CancelServiceController::cancelServiceSummary'], [], [['text', '/cancel-service/summary']], [], [], []],
+    'App\Controller\CancelServiceController::confirmCancelService' => [[], ['_controller' => 'App\\Controller\\CancelServiceController::confirmCancelService'], [], [['text', '/cancel-service/confirm']], [], [], []],
 ];
