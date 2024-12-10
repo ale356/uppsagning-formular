@@ -48,7 +48,7 @@ class CancelServiceController extends AbstractController
             }
 
             // Store the data and redirect to confirmation page
-            $session = $this->get('session');
+            $session = $request->getSession();
             $session->set('selectedServices', $selectedServices);
 
             return $this->redirectToRoute('cancel_service_summary');
@@ -63,7 +63,7 @@ class CancelServiceController extends AbstractController
     #[Route('/cancel-service/summary', name: 'cancel_service_summary')]
     public function cancelServiceSummary(Request $request): Response
     {
-        $session = $this->get('session');
+        $session = $request->getSession();
         $selectedServices = $session->get('selectedServices', []);
 
         if (empty($selectedServices)) {
