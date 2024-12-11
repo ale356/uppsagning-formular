@@ -19,9 +19,6 @@ class CancelServiceType extends AbstractType
             ]);
         }
 
-        $builder->add('submit', SubmitType::class, [
-            'label' => 'Next',
-        ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

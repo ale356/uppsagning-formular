@@ -1,19 +1,40 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div class="container mx-auto p-6">
-<h1>Cancel Services</h1>
+<div class="container mx-auto p-6 max-w-lg">
+    <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Cancel Services</h1>
 
-<p>Welcome, {{ user.name }}</p>
-<p>Email: {{ user.email }}</p>
+    <div class="bg-white shadow-md rounded-lg p-6">
+        <p class="text-lg text-gray-700 font-medium mb-2">Welcome, {{ user.name }}</p>
+        <p class="text-sm text-gray-600 mb-4">Email: {{ user.email }}</p>
 
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-{{ form_end(form) }}
+        {% for message in app.flashes('error') %}
+            <div class="bg-red-100 text-red-800 border border-red-300 px-4 py-2 rounded mb-4">
+                {{ message }}
+            </div>
+        {% endfor %}
 
-{% for message in app.flashes('error') %}
-    <div class="error">{{ message }}</div>
+        {{ form_start(form, {'attr': {'class': 'space-y-4'}}) }}
+        <div class="space-y-4">
+{% for field in form %}
+    {# Skip hidden fields like _token #}
+    {% if field.vars.name != '_token' %}
+        <div class="flex items-center space-x-2">
+            {{ form_widget(field, {'attr': {'class': 'w-4 h-4 text-blue-500 focus:ring-blue-500 border-gray-300 rounded'}}) }}
+            {{ form_label(field, null, {'label_attr': {'class': 'text-gray-700 font-medium'}}) }}
+        </div>
+    {% else %}
+        {# Render hidden fields without labels or classes #}
+        {{ form_widget(field) }}
+    {% endif %}
 {% endfor %}
-</div>
 
+        </div>
+
+        <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition mt-4">
+            Next
+        </button>
+        {{ form_end(form) }}
+    </div>
+</div>
 {% endblock %}
