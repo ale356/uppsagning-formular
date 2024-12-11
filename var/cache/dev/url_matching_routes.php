@@ -18,6 +18,7 @@ return [
         '/cancel-service' => [[['_route' => 'cancel_service', '_controller' => 'App\\Controller\\CancelServiceController::cancelService'], null, null, null, false, false, null]],
         '/cancel-service/summary' => [[['_route' => 'cancel_service_summary', '_controller' => 'App\\Controller\\CancelServiceController::cancelServiceSummary'], null, null, null, false, false, null]],
         '/cancel-service/confirm' => [[['_route' => 'cancel_service_confirm', '_controller' => 'App\\Controller\\CancelServiceController::confirmCancelService'], null, ['POST' => 0], null, false, false, null]],
+        '/' => [[['_route' => 'homepage', '_controller' => 'App\\Controller\\DefaultController::index'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

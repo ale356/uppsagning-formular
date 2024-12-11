@@ -78,7 +78,7 @@ class CancelServiceController extends AbstractController
     #[Route('/cancel-service/confirm', name: 'cancel_service_confirm', methods: ['POST'])]
     public function confirmCancelService(Request $request): Response
     {
-        $session = $this->get('session');
+        $session = $request->getSession();
         $selectedServices = $session->get('selectedServices', []);
 
         // Simulate API POST request

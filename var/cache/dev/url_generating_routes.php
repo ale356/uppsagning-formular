@@ -21,7 +21,9 @@ return [
     'cancel_service' => [[], ['_controller' => 'App\\Controller\\CancelServiceController::cancelService'], [], [['text', '/cancel-service']], [], [], []],
     'cancel_service_summary' => [[], ['_controller' => 'App\\Controller\\CancelServiceController::cancelServiceSummary'], [], [['text', '/cancel-service/summary']], [], [], []],
     'cancel_service_confirm' => [[], ['_controller' => 'App\\Controller\\CancelServiceController::confirmCancelService'], [], [['text', '/cancel-service/confirm']], [], [], []],
+    'homepage' => [[], ['_controller' => 'App\\Controller\\DefaultController::index'], [], [['text', '/']], [], [], []],
     'App\Controller\CancelServiceController::cancelService' => [[], ['_controller' => 'App\\Controller\\CancelServiceController::cancelService'], [], [['text', '/cancel-service']], [], [], []],
     'App\Controller\CancelServiceController::cancelServiceSummary' => [[], ['_controller' => 'App\\Controller\\CancelServiceController::cancelServiceSummary'], [], [['text', '/cancel-service/summary']], [], [], []],
     'App\Controller\CancelServiceController::confirmCancelService' => [[], ['_controller' => 'App\\Controller\\CancelServiceController::confirmCancelService'], [], [['text', '/cancel-service/confirm']], [], [], []],
+    'App\Controller\DefaultController::index' => [[], ['_controller' => 'App\\Controller\\DefaultController::index'], [], [['text', '/']], [], [], []],
 ];
