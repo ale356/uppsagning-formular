@@ -1,8 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div class="container mx-auto p-6 max-w-lg">
-    <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Cancel Services</h1>
+<div class="container mx-auto p-6 sm:max-w-lg">
+    <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center sm:text-left">Cancel Services</h1>
 
     <div class="bg-white shadow-md rounded-lg p-6">
         <p class="text-lg text-gray-700 font-medium mb-2">Welcome, {{ user.name }}</p>
@@ -16,19 +16,18 @@
 
         {{ form_start(form, {'attr': {'class': 'space-y-4'}}) }}
         <div class="space-y-4">
-{% for field in form %}
-    {# Skip hidden fields like _token #}
-    {% if field.vars.name != '_token' %}
-        <div class="flex items-center space-x-2">
-            {{ form_widget(field, {'attr': {'class': 'w-4 h-4 text-blue-500 focus:ring-blue-500 border-gray-300 rounded'}}) }}
-            {{ form_label(field, null, {'label_attr': {'class': 'text-gray-700 font-medium'}}) }}
-        </div>
-    {% else %}
-        {# Render hidden fields without labels or classes #}
-        {{ form_widget(field) }}
-    {% endif %}
-{% endfor %}
-
+            {% for field in form %}
+                {# Skip hidden fields like _token #}
+                {% if field.vars.name != '_token' %}
+                    <div class="flex flex-wrap items-center space-y-2 sm:space-y-0 sm:flex-nowrap sm:space-x-2">
+                        {{ form_widget(field, {'attr': {'class': 'w-full sm:w-auto text-blue-500 focus:ring-blue-500 border-gray-300 rounded'}}) }}
+                        {{ form_label(field, null, {'label_attr': {'class': 'block sm:inline text-gray-700 font-medium'}}) }}
+                    </div>
+                {% else %}
+                    {# Render hidden fields without labels or classes #}
+                    {{ form_widget(field) }}
+                {% endif %}
+            {% endfor %}
         </div>
 
         <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition mt-4">
@@ -37,4 +36,5 @@
         {{ form_end(form) }}
     </div>
 </div>
+
 {% endblock %}
